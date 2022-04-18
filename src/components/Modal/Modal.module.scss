@@ -1,0 +1,51 @@
+.modalShadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.modal {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border-radius: 1vmax;
+  width: fit-content;
+  min-width: 40vw;
+  position: relative;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 10vh;
+  border-radius: 5px;
+}
+
+.modalHeader {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  border-bottom: 2px solid #ccc;
+  background: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modalBody {
+  z-index: 20;
+  background: rgba(255, 255, 255, 1);
+}
+
+.modalButton {
+  cursor: pointer;
+  margin: auto;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

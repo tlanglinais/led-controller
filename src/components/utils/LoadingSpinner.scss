@@ -1,0 +1,45 @@
+.loading-spinner-container {
+  --spinner-height: 80px;
+  --border-width: 8px;
+  --spinner-color-inside: #05386b;
+  --spinner-color-outside: #fa3636;
+  display: flex;
+  flex-basis: fill;
+  justify-content: center;
+
+  margin-top: 2rem;
+}
+
+.loading-circles {
+  left: calc(50% - var(--spinner-height) / 2);
+  top: calc(50% - var(--spinner-height) / 2);
+  width: var(--spinner-height);
+  height: var(--spinner-height);
+  margin: auto;
+}
+
+.loading-circle {
+  position: absolute;
+  height: var(--spinner-height);
+  width: var(--spinner-height);
+  border: var(--border-width) solid var(--spinner-color-inside);
+  border-radius: 50%;
+}
+
+.loading-spinner {
+  position: absolute;
+  height: var(--spinner-height);
+  width: var(--spinner-height);
+  border: var(--border-width) solid red;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  animation: spin 0.5s ease infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

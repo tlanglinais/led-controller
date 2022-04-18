@@ -1,0 +1,27 @@
+.dashboard-height {
+  /* height: calc( */
+  /* 100vh - theme('spacing.10') - theme('fontSize["5.5xl"]') - */
+  /* theme('margin[5]') - theme('margin[2]') */
+  /* ); 7.75rem */
+  height: 100vh;
+}
+
+.max-card-height {
+  /* max-height: calc(100% - 5rem); */
+  max-height: 50%;
+  /* min-height: calc(50%); */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: inherit;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
