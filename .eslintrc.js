@@ -32,7 +32,7 @@ module.exports = {
     'consistent-return': [0],
     'no-await-in-loop': [0],
     'prefer-const': 'warn',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
   },
   settings: {
     'import/ignore': ['.css', 'node_modules/', '.scss'],

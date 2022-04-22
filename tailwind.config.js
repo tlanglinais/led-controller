@@ -31,6 +31,9 @@ module.exports = {
         'vh': '100vh',
         'min': 'min-content',
         'max': 'max-content'
+      },
+      margin: {
+        '0auto': '0 auto'
       }
     }
   },

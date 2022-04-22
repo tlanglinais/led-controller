@@ -17,7 +17,7 @@ const Modal = ({ isShown, onClose, header = '', children }) => {
               className={`${styles.modalButton}`}
             >
               <FaTimes
-                onClick={() => { console.log('clicked'); onClose() }}
+                onClick={() => onClose()}
                 className="cursor-pointer mx-auto"
               />
             </span>

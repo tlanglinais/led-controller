@@ -3,20 +3,28 @@ import Card from '../Cards/Card';
 import ledJson from '../../leds.json';
 import Modal from '../Modal/Modal';
 import { LED } from '@/types/Cards/Card';
+import LEDModal from './LEDModal'
 
 const LEDController = () => {
   const leds = ledJson;
-  const [selectedLed, setSelectedLed] = useState(leds[0])
-  const [modal, setModal] = useState(false)
+  const [selectedLed, setSelectedLed] = useState(leds[0]);
+  const [modal, setModal] = useState(false);
 
-  const onClick = (newLed: LED) => {
-    console.log('clicked?',);
+  const onClick = (newLed: LED): void => {
     setSelectedLed(newLed);
     setModal(true);
   }
 
-  const onClose = () => {
+  const onClose = (): void => {
     setSelectedLed(null);
+    setModal(false);
+  }
+
+  const updateLed = (position, { r, g, b }): void => {
+    const found = leds.find(l => l.position === position);
+    found.r = r;
+    found.g = g;
+    found.b = b;
     setModal(false);
   }
 
@@ -38,12 +46,10 @@ const LEDController = () => {
           onClose={onClose}
           header=""
         >
-          Current Values
-          <div className='flex flex-col'>
-            <span>Red: {selectedLed.r}</span>
-            <span>Green: {selectedLed.g}</span>
-            <span>Blue: {selectedLed.b}</span>
-          </div>
+          <LEDModal
+            led={selectedLed}
+            onSubmit={updateLed}
+          />
         </Modal>
       )}
     </>

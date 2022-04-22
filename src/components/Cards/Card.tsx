@@ -10,8 +10,8 @@ const Card = ({ led, onClick }: Props) => {
   return (
     <div
       className="shadow-lg rounded-md relative pl-4"
-      style={{ backgroundColor: `rgb(${r},${g},${b})`, width: '10rem', height: '10rem' }}
-      onClick={() => { console.log('hello?'); onClick(led) }}
+      style={{ backgroundColor: `rgb(${r},${g},${b})`, width: '9rem', height: '9rem' }}
+      onClick={() => onClick(led)}
       role="button"
       tabIndex={position}
       onKeyDown={(e) => { if (e.key === 'Enter') onClick(position) }}
