@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  position: relative;
+}
+
+.sidenav {
+  grid-column: 1 / 2;
+}
+
+.leds {
+  grid-column: 2 / 3;
+  height: fit-content;
+}

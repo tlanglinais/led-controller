@@ -1,0 +1,48 @@
+.select {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+
+  &__label {
+    font-size: 1em;
+    position: absolute;
+    top: 42%;
+    left: 5%;
+    z-index: 1;
+
+    transition: transform 200ms ease-in-out, font-size 200ms ease-in-out;
+  }
+
+  &__select {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    z-index: 100;
+
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text);
+    line-height: 2;
+
+    padding: 0.5em 0.25em 0.5em 0.25em;
+    margin-top: 0.75em;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not([data-value="All"])+label {
+      // &:focus + label {
+      transform: translate(-25%, -130%);
+      font-size: 0.8em;
+    }
+  }
+
+  &__option {
+    line-height: 1.5;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+  }
+}
