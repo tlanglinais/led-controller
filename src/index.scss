@@ -31,3 +31,26 @@ img {
     }
   }
 }
+
+.dashboard-height {
+  height: 100vh;
+}
+
+.max-card-height {
+  max-height: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: inherit;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

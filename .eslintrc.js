@@ -28,7 +28,7 @@ module.exports = {
     'no-shadow': [0],
     '@typescript-eslint/no-unused-vars': [1],
     '@typescript-eslint/no-shadow': [1],
-    'max-len': ['warn'],
+    'max-len': [0],
     'consistent-return': [0],
     'no-await-in-loop': [0],
     'prefer-const': 'warn',

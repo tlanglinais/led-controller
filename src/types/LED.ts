@@ -1,4 +1,4 @@
-export interface LED {
+export interface Led {
   position: number,
   brightness: number,
   r: number,

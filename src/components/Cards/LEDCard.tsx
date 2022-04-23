@@ -1,11 +1,11 @@
-import { LED } from '@/types/LED';
+import { Led } from '@/types/Led';
 
 interface Props {
-  led: LED,
+  led: Led,
   onClick: Function
 }
 
-const LEDCard = ({ led, onClick }: Props) => {
+const LedCard = ({ led, onClick }: Props) => {
   const { position, r, g, b } = led;
   const cardSize = '8rem';
   return (
@@ -27,4 +27,4 @@ const LEDCard = ({ led, onClick }: Props) => {
   )
 };
 
-export default LEDCard;
+export default LedCard;

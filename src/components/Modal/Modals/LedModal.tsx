@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { ChromePicker } from 'react-color';
-import { LED } from '@/types/LED';
+import { FiCheck, FiX } from 'react-icons/fi'
+import { Led } from '@/types/Led';
 
-interface LEDModalProps {
-  led: LED,
-  onSubmit: (position, led, brightness) => void,
-  onCancel: Function
+interface LedModalProps {
+  led?: Led,
+  onSubmit: (led: Led) => void,
+  onCancel: Function,
+  children?: ReactNode
 }
 
 const colorToHex = (color): string => {
@@ -21,7 +23,7 @@ const hexToRGB = (hex): { r: number, g: number, b: number } => {
   return { r: newR, g: newG, b: newB };
 }
 
-const LEDModal = ({ led, onSubmit, onCancel }: LEDModalProps) => {
+const LedModal = ({ led, onSubmit, onCancel, children }: LedModalProps) => {
   const { r, g, b, position, brightness } = led;
   const [rgb, setRgb] = useState({ r, g, b });
   const [hex, setHex] = useState(`#${colorToHex(r)}${colorToHex(g)}${colorToHex(b)}`)
@@ -122,29 +124,42 @@ const LEDModal = ({ led, onSubmit, onCancel }: LEDModalProps) => {
             min="0"
             max="255"
             step="1"
+            value={newBrightness}
             onChange={(e) => setNewBrightness(Number(e.target.value))}
           />
         </div>
 
         <div className="flex align-middle justify-center mt-6 gap-4">
           <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-red-500 hover:bg-red-700 text-white font-bold text-2xl py-2 px-4 rounded-full"
             type="button"
             onClick={() => onCancel()}
           >
-            Cancel
+            <FiX />
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl py-2 px-4 rounded-full"
             type="button"
-            onClick={() => onSubmit(position, rgb, newBrightness)}
+            onClick={() => onSubmit({ position, r: rgb.r, g: rgb.g, b: rgb.b, brightness: newBrightness })}
           >
-            Save
+            <FiCheck />
           </button>
         </div>
       </form>
+      {children}
     </>
   );
 }
 
-export default LEDModal;
+LedModal.defaultProps = {
+  led: {
+    position: 0,
+    brightness: 0,
+    r: 0,
+    g: 0,
+    b: 0,
+  },
+  children: null
+}
+
+export default LedModal;
